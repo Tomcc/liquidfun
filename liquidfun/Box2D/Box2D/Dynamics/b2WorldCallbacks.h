@@ -216,7 +216,7 @@ public:
 
 	/// Called for each particle found in the query AABB.
 	/// @return false to terminate the query.
-	virtual bool ReportParticle(const b2ParticleSystem* particleSystem,
+	virtual bool ReportParticle(b2ParticleSystem* particleSystem,
 								int32 index)
 	{
 		B2_NOT_USED(particleSystem);

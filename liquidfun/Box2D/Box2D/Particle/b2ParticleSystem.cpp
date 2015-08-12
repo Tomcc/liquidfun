@@ -4531,7 +4531,7 @@ void b2ParticleSystem::QueryAABB(b2QueryCallback* callback,
 		if (aabb.lowerBound.x < p.x && p.x < aabb.upperBound.x &&
 			aabb.lowerBound.y < p.y && p.y < aabb.upperBound.y)
 		{
-			if (!callback->ReportParticle(this, i))
+			if (!callback->ReportParticle((b2ParticleSystem*)this, i))
 			{
 				break;
 			}
