@@ -37,6 +37,7 @@ struct b2DistanceJointDef : public b2JointDef
 		length = 1.0f;
 		frequencyHz = 0.0f;
 		dampingRatio = 0.0f;
+		yScale = 1.f;
 	}
 
 	/// Initialize the bodies, anchors, and length using the world
@@ -59,6 +60,9 @@ struct b2DistanceJointDef : public b2JointDef
 
 	/// The damping ratio. 0 = no damping, 1 = critical damping.
 	float32 dampingRatio;
+
+	///HACK the y scale, to make it an ellipse instead of a circle
+	float32 yScale;
 };
 
 /// A distance joint constrains two points on two bodies
@@ -113,6 +117,7 @@ protected:
 	float32 m_frequencyHz;
 	float32 m_dampingRatio;
 	float32 m_bias;
+	float32 m_yScale;
 
 	// Solver shared
 	b2Vec2 m_localAnchorA;

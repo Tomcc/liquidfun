@@ -54,6 +54,7 @@ b2DistanceJoint::b2DistanceJoint(const b2DistanceJointDef* def)
 	m_length = def->length;
 	m_frequencyHz = def->frequencyHz;
 	m_dampingRatio = def->dampingRatio;
+	m_yScale = def->yScale;
 	m_impulse = 0.0f;
 	m_gamma = 0.0f;
 	m_bias = 0.0f;
@@ -85,6 +86,7 @@ void b2DistanceJoint::InitVelocityConstraints(const b2SolverData& data)
 	m_rA = b2Mul(qA, m_localAnchorA - m_localCenterA);
 	m_rB = b2Mul(qB, m_localAnchorB - m_localCenterB);
 	m_u = cB + m_rB - cA - m_rA;
+	m_u.y *= m_yScale;
 
 	// Handle singularity.
 	float32 length = m_u.Length();
