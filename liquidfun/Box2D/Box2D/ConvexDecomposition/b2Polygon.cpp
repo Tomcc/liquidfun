@@ -1519,7 +1519,7 @@ bool b2PolyNode::IsConnectedTo(b2PolyNode& me){
 	return isFound;
 }
 b2PolyNode* b2PolyNode::GetRightestConnection(b2PolyNode* incoming){
-	if (nConnected == 0) {b2Assert(false)}; // This means the connection graph is inconsistent
+	if (nConnected == 0) { b2Assert(false); } // This means the connection graph is inconsistent
 	if (nConnected == 1) {
 		//b2Assert(false);
 		// Because of the possibility of collapsing nearby points,
