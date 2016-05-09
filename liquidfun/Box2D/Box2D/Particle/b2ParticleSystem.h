@@ -627,6 +627,11 @@ public:
 	/// GetParticleCount() items are in the returned array.
 	const int32* GetIndexByExpirationTimeBuffer();
 
+	///Get the definition for this Particle System
+	const b2ParticleSystemDef& GetDef() const {
+		return m_def;
+	}
+
 	/// Apply an impulse to one particle. This immediately modifies the
 	/// velocity. Similar to b2Body::ApplyLinearImpulse.
 	/// @param index the particle that will be modified.
