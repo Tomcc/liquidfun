@@ -19,6 +19,8 @@
 #ifndef B2_POLYGON_H
 #define B2_POLYGON_H
 
+#include <cstdio>
+
 #include "Box2D/Box2D.h"
 #include "b2Triangle.h"
 
