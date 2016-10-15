@@ -141,6 +141,17 @@ set(BOX2D_Rope_SRCS
 set(BOX2D_Rope_HDRS
 	Rope/b2Rope.h
 )
+
+set(BOX2D_ConvexDec_SRCS 
+	ConvexDecomposition/b2Polygon.cpp
+	ConvexDecomposition/b2Triangle.cpp
+	)
+
+set(BOX2D_ConvexDec_HDRS
+	ConvexDecomposition/b2Polygon.h
+	ConvexDecomposition/b2Triangle.h
+	)
+
 set(BOX2D_General_HDRS
 	Box2D.h
 )
@@ -165,6 +176,8 @@ if(BOX2D_BUILD_SHARED)
 		${BOX2D_Particle_HDRS}
 		${BOX2D_Rope_SRCS}
 		${BOX2D_Rope_HDRS}
+		${BOX2D_ConvexDec_SRCS}
+		${BOX2D_ConvexDec_HDRS}
 	)
 	set_target_properties(Box2D_shared PROPERTIES
 		OUTPUT_NAME "liquidfun"
@@ -196,6 +209,8 @@ if(BOX2D_BUILD_STATIC)
 		${BOX2D_Particle_HDRS}
 		${BOX2D_Rope_SRCS}
 		${BOX2D_Rope_HDRS}
+		${BOX2D_ConvexDec_SRCS}
+		${BOX2D_ConvexDec_HDRS}
 	)
 	set_target_properties(Box2D PROPERTIES
 		OUTPUT_NAME "liquidfun"
